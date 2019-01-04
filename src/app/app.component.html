@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <ul class="nav nav-tabs">
+                <li role="presentation" class="active"><a routerLink="/">Home</a></li>
+                <li role="presentation"><a routerLink="/servers">Servers</a></li>
+                <li role="presentation"><a routerLink="/users">Users</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <div> Months :
+        <select>
+           <option *ngFor="let i of months">{{i}}</option>
+        </select>
+    </div>
+    <div>
+        <span *ngIf="isavailable; else condition1">Condition is valid.</span>
+        <ng-template #condition1>Condition is invalid</ng-template>
+    </div>
+    <button (click)="myClickFunction($event)">
+        Click for firing event
+     </button>
+</div>
